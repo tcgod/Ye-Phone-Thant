@@ -3,7 +3,9 @@ body{
 }
 img.tiny{
     width: 20px;
-    border: solid thin grey;	
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 img.big {
     width: 200px;
@@ -11,6 +13,12 @@ img.big {
     position: absolute;
     right: 1ex;
     top: 1ex;
+}
+img.medium{
+    width: 200px;
+    padding: 5px;
+    position: relative;
+    margin-left: 30%;
 }
 
 .properties div div{
@@ -22,11 +30,48 @@ img.big {
 .properties div div:last-child{
 	font-weight: bold;
 }
+.properties{
+    margin: auto;
+    max-width: 350px;
+    height: 200px;
+    position: relative;
+    padding: 10px;
+}
 a{
 	text-decoration: none;
 }
-
+.properties {
+    border-color: red;
+}
+.h1{
+    text-align: center;
+}
+.gg{
+    border-style: groove;
+    margin: auto;
+    padding-bottom: 50px;
+    border-width: medium;
+    height: 500px;
+    max-width: 500px;
+}
+ul{
+    list-style: none;
+}
 .nav_button{
     border:solid gray thin;
     bottom: auto;
+    padding: 1ex;
+    margin: 1ex;
+    border-radius: 0.5ex;
+    text-align: center;
+    display: inline-block;
+    padding: 5px;
     }
+.create{
+    border-color: red;
+}
+.cr{
+    margin: auto;
+}
+
+
