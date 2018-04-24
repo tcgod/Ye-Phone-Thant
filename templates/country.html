@@ -4,26 +4,42 @@
 	<link rel='stylesheet' href='/static/style.css'>
 </head>
 	<body>
-		<h1>{{c['name']}}</h1>
-		<div class='properties'>
-			<div>
-				<div>Capital</div>
-				<div>{{c['capital']}}</div>
+		<div class="gg">
+			<h1 class="h1">{{c['name']}}</h1>
+			<div><img src="/static/flags/{{c['tld']}}.gif" class='medium'></div>
+			<div class='properties'>
+				<div>
+					<div>Continent</div>
+					<div><a href='../continent/{{c.continent}}'>{{c['continent']}}</a></div>
+				</div>
+				<div>
+					<div>Area</div>
+					<div>{{"{:,.0f}".format(c['area'])}}</div> 
+				</div>
+				<div>
+					<div>Population</div>
+					<div>{{"{:,.0f}".format(c['population'])}}</div>
+				</div >
+				<div>
+					<div>GDP (million $)</div>
+					<div>{{ "{:,.0f}".format(c['gdp']/1000000) }}</div>
+				</div>
+				<div>
+					<div>Capital</div>
+					<div>{{c['capital']}}</div>
+				</div>
+				<div>
+					<div>TLD</div>
+					<div>{{c['tld']}}</div>
+				</div>
 			</div>
-			<div>
-				<div>Continent</div>
-				<div><a href='../continent/{{c.continent}}'>{{c['continent']}}</a></div>
+		<div class="properties">
+			<div class='nav_button'>
+			<a href='/editcountryByName/{{c.name}}'>Edit</a>
 			</div>
-			<div>
-				<div>Population</div>
-				<div>{{"{:,.0f}".format(c['population'])}}</div>
-			</div>
-			<div>
-				<div>GDP (million $)</div>
-				<div>{{ "{:,.0f}".format(c['gdp']/1000000) }}</div>
+			<div class='nav_button'> <a href='/delete/{{c.name}}'> Delete </a> </div>
+			<div class='nav_button'><a href="/createcountry"> Create</a></div>
 			</div>
 		</div>
-		<img src="/static/flags/{{c['tld']}}.gif" class='big'>
-		<div> <a href='/delete/{{c.name}}'> Delete </a> </div>
 	</body>
 </html>
