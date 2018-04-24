@@ -102,6 +102,7 @@ def editcountryByNamePage(n):
 	return render_template(
 		'country-edit.html',
 		c = c)
+<<<<<<< HEAD
 
 @app.route('/updatecountrybyname')
 def updatecountryByNamePage():
@@ -129,6 +130,25 @@ def describewithAlphabetics(a):
 		cl = cl,
 		a = a,
 		lota=lota)
+=======
+
+@app.route('/updatecountrybyname')
+def updatecountryByNamePage():
+	n=request.args.get('name')
+	c = None
+	for x in w:
+		if x['name'] == n:
+			c = x
+	c['capital'] = request.args.get('capital')
+	c['continent'] = request.args.get('continent')
+	c['area'] = int(request.args.get('area'))
+	c['gdp']  = float(request.args.get('gdp'))
+	c['tld']  = request.args.get('tld')
+	c['population']  = int(request.args.get('population'))
+	return render_template(
+		'country.html',
+		c = c)
+>>>>>>> dbc18d43cc3dc6a7a4ee7106836d40e2016bf965
 
 app.run(host='0.0.0.0', port=5619, debug=True)
 
